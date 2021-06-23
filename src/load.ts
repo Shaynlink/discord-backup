@@ -96,7 +96,7 @@ export const loadChannels = (guild: Guild, backupData: BackupData, rateLimitMana
         ]);
     });
     backupData.channels.others.forEach((channelData) => {
-        loadChannelPromises.push([loadChannel, null, channelData, guild, null, options]);
+        loadChannelPromises.push([loadChannel, null, channelData, guild, null, options, rateLimitManager]);
     });
     return rateLimitManager.resolver(loadChannelPromises);
 };
